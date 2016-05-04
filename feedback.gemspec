@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Feedback::VERSION
   s.authors     = ["Sia"]
   s.email       = ["siakaramalegos@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Feedback."
-  s.description = "TODO: Description of Feedback."
+  s.homepage    = "http://www.mypage.com"
+  s.summary     = "Summary of Feedback."
+  s.description = "Description of Feedback."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
