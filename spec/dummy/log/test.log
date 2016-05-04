@@ -1,0 +1,20 @@
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 11:45:38 -0500
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 11:46:13 -0500
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 11:47:02 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (1.8ms)
+Completed 200 OK in 236ms (Views: 235.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 11:47:54 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (1.2ms)
+Completed 200 OK in 202ms (Views: 201.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
