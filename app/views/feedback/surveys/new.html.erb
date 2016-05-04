@@ -1,0 +1,11 @@
+<%= form_for(@survey_response) do |f| %>
+  <h3>Do you like this thing?</h3>
+  <%= f.radio_button(:approval, true) %>
+  <%= f.label :approval, 'Yes', value: true %><br>
+  <%= f.radio_button(:approval, false) %>
+  <%= f.label :approval, 'No', value: false %><br>
+
+  <p>
+    <%= f.submit value: 'Submit' %>
+  </p>
+<% end %>

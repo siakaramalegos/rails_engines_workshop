@@ -7,6 +7,10 @@ module Feedback
     def thanks
     end
 
+    def new
+      @survey_response = Feedback::SurveyResponse.new
+    end
+
     def create
       Feedback::SurveyResponse.create!(survey_response_params)
       redirect_to thanks_path

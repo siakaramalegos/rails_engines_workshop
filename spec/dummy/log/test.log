@@ -160,3 +160,291 @@ Processing by Feedback::SurveysController#thanks as HTML
   Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (1.0ms)
 Completed 200 OK in 183ms (Views: 183.0ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:17:47 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "t"], ["created_at", "2016-05-04 17:17:47.689878"], ["updated_at", "2016-05-04 17:17:47.689878"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 35ms (ActiveRecord: 3.3ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.2ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:17:47 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "t"], ["created_at", "2016-05-04 17:17:47.734787"], ["updated_at", "2016-05-04 17:17:47.734787"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:17:47 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "f"], ["created_at", "2016-05-04 17:17:47.761884"], ["updated_at", "2016-05-04 17:17:47.761884"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 15ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+  [1m[36mFeedback::SurveyResponse Load (0.2ms)[0m  [1mSELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:17:47 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "f"], ["created_at", "2016-05-04 17:17:47.825618"], ["updated_at", "2016-05-04 17:17:47.825618"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[36m (2.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  begin transaction
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:17:47 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (5.5ms)
+Completed 200 OK in 377ms (Views: 376.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (1.4ms)
+Completed 200 OK in 242ms (Views: 241.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "t"], ["created_at", "2016-05-04 17:19:05.503303"], ["updated_at", "2016-05-04 17:19:05.503303"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.1ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "t"], ["created_at", "2016-05-04 17:19:05.523768"], ["updated_at", "2016-05-04 17:19:05.523768"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "f"], ["created_at", "2016-05-04 17:19:05.540958"], ["updated_at", "2016-05-04 17:19:05.540958"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+  [1m[36mFeedback::SurveyResponse Load (0.1ms)[0m  [1mSELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "f"], ["created_at", "2016-05-04 17:19:05.557086"], ["updated_at", "2016-05-04 17:19:05.557086"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:19:05 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (24.7ms)
+Completed 200 OK in 298ms (Views: 295.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "t"], ["created_at", "2016-05-04 17:22:03.852621"], ["updated_at", "2016-05-04 17:22:03.852621"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.1ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "t"], ["created_at", "2016-05-04 17:22:03.869603"], ["updated_at", "2016-05-04 17:22:03.869603"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "f"], ["created_at", "2016-05-04 17:22:03.884570"], ["updated_at", "2016-05-04 17:22:03.884570"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+  [1m[36mFeedback::SurveyResponse Load (0.1ms)[0m  [1mSELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "f"], ["created_at", "2016-05-04 17:22:03.899201"], ["updated_at", "2016-05-04 17:22:03.899201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:22:03 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:22:38 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (15.6ms)
+Completed 200 OK in 286ms (Views: 282.7ms | ActiveRecord: 0.2ms)
+Started POST "/feedback/survey_responses" for 127.0.0.1 at 2016-05-04 12:22:38 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "survey_response"=>{"approval"=>"true"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "t"], ["created_at", "2016-05-04 17:22:38.981179"], ["updated_at", "2016-05-04 17:22:38.981179"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:22:38 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.1ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started GET "/feedback/survey_responses/new" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#new as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/new.html.erb within layouts/feedback/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/feedback/survey_responses" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "survey_response"=>{"approval"=>"false"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "f"], ["created_at", "2016-05-04 17:22:39.012295"], ["updated_at", "2016-05-04 17:22:39.012295"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.1ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "t"], ["created_at", "2016-05-04 17:22:39.033869"], ["updated_at", "2016-05-04 17:22:39.033869"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "feedback_survey_responses"[0m
+  [1m[35mFeedback::SurveyResponse Load (0.1ms)[0m  SELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=true" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"true"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "t"], ["created_at", "2016-05-04 17:22:39.046514"], ["updated_at", "2016-05-04 17:22:39.046514"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)  [["approval", "f"], ["created_at", "2016-05-04 17:22:39.059270"], ["updated_at", "2016-05-04 17:22:39.059270"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "feedback_survey_responses"
+  [1m[36mFeedback::SurveyResponse Load (0.1ms)[0m  [1mSELECT  "feedback_survey_responses".* FROM "feedback_survey_responses"  ORDER BY "feedback_survey_responses"."id" DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started POST "/feedback/survey_responses?survey_response%5Bapproval%5D=false" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#create as HTML
+  Parameters: {"survey_response"=>{"approval"=>"false"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feedback_survey_responses" ("approval", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["approval", "f"], ["created_at", "2016-05-04 17:22:39.070343"], ["updated_at", "2016-05-04 17:22:39.070343"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feedback/thanks
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/feedback/thanks" for 127.0.0.1 at 2016-05-04 12:22:39 -0500
+Processing by Feedback::SurveysController#thanks as HTML
+  Rendered /Users/sia1/Projects/rails_engines_railsconf_2016/feedback/app/views/feedback/surveys/thanks.html.erb within layouts/feedback/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
